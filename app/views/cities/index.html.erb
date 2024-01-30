@@ -3,12 +3,14 @@
 <h1>Cities</h1>
 
 <div id="cities">
+  <%=will_paginate @cities%>
   <% @cities.each do |city| %>
     <%= render city %>
     <p>
       <%= link_to "Show this city", city %>
     </p>
   <% end %>
+  <%=will_paginate @cities%>
 </div>
 
 <%= link_to "New city", new_city_path %>

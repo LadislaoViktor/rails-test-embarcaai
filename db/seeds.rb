@@ -5,3 +5,39 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# Read json file
+require 'json'
+# Get each name:
+
+def hash_parser(json_file,state_id)
+    if json_file
+        data_hash = JSON.parse(json_file)
+    
+        data_hash.each do |n| 
+            City.create!(name:n['nome'].to_s,states_id:state_id)
+        end
+    else
+        p 'deu ruim'
+    end
+end
+
+state = State.create!(name:"Paraná")
+p'Municípios do Paraná:'
+json_file = File.read('./municipios.json')
+hash_parser(json_file,state.id)
+
+state = State.create!(name:"Santa Catarina")
+p'Municípios de SC:'
+json_file = File.read('./municipios-sc.json')
+hash_parser(json_file,state.id)
+
+state = State.create!(name:"Rio Grande do Sul")
+p'Municípios do Rio Grande do Sul:'
+json_file = File.read('./municipios-rs.json')
+hash_parser(json_file,state.id)
+
+
+
+
+

@@ -3,7 +3,7 @@ class CitiesController < ApplicationController
 
   # GET /cities or /cities.json
   def index
-    @cities = City.all
+    @cities = City.paginate(page: params[:page])
   end
 
   # GET /cities/1 or /cities/1.json
@@ -64,6 +64,6 @@ class CitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def city_params
-      params.require(:city).permit(:name, :states_id)
+      params.require(:city).permit(:name, :states_id,:page)
     end
 end
