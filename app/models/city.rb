@@ -1,5 +1,5 @@
 class City < ApplicationRecord
-  belongs_to :state
+  belongs_to :state, optional: true
   
   scope :ordered_by_name, -> { reorder(name: :asc) }
 

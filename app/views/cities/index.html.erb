@@ -3,31 +3,36 @@
     <%= notice %>
   </div>
 <% end %>
-<h1 class="text-center">Cidades</h1>
+<h1 class="text-center">Cities</h1>
 <%= form_with(model:@city, url: "/cities/search", method: :get) do |form| %>
   <%= form.fields_for :city do |city_fields| %>
     <div class="row g-3">
       <div class="col">
-        <%= city_fields.label :name, "Selecione o estado:" %>
-        <%= city_fields.collection_select(:states_id, states, :id, :name, prompt: "Selecione") %>
+        <%= city_fields.label :name, "Choose a state:" %>
+        <%= city_fields.collection_select(:states_id, states, :id, :name, prompt: "Select") %>
       </div>
       <div class="col">
-        <%= city_fields.text_field :name, placeholder: "Digite o nome da cidade aqui." %>
+        <%= city_fields.text_field :name, placeholder: "Type the city name here" %>
         <%= city_fields.submit "Buscar" %>
       </div>
     </div>
   <% end %>
 <% end %>
-<%= link_to "Criar cidade", new_city_path %>
+<%= link_to "New", new_city_path %>
 <div class="" id="cities">
-  <% if @cities.length > 0 %>
-    <%= will_paginate @cities %>
+  <% if @cities.length.positive? %>
+    <div class="apple_pagination">
+      <div class="page_info">
+        <%= page_entries_info @cities %>
+      </div>
+      <%= will_paginate @cities,:container => false %>
+    </div>
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Cidade</th>
-          <th scope="col">Estado</th>
-          <th scope="col">Ações</th>
+          <th scope="col">City</th>
+          <th scope="col">State</th>
+          <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -35,19 +40,24 @@
           <tr>
             <td><%= city.name %></td>
             <td><%= city.state %></td>
-            <td>
-              <%= link_to 'Exibir', city, type:"button", class:"btn btn-info btn-sm bi bi-eye-fill" %>
-              <%= link_to 'Editar', edit_city_path(city), type:"button", class:"btn btn-info btn-sm bi bi-pencil-fill" %>
-              <%= button_to 'Excluir', city, method: :delete, type:"button", class:"btn btn-info btn-sm bi bi-trash" %>
+            <td class="align-middle">
+              <%= link_to 'Show', city, type:"button", class:"btn btn-info btn-sm bi bi-eye-fill" %>
+              <%= link_to 'Edit', edit_city_path(city), type:"button", class:"btn btn-info btn-sm bi bi-pencil-fill" %>
+              <%= button_to 'Delete', city, method: :delete, type:"button", class:"btn btn-info btn-sm bi bi-trash" %>
             </td>
           </tr>
         <% end %>
       <% else%>
         <tr>
-          <td colspan="3">Nenhuma cidade encontrada.</td>
+          <td colspan="3">No records found.</td>
         </tr>
       <% end %>
     </tbody>
   </table>
-  <%= will_paginate @cities %>
+  <div class="apple_pagination">
+    <div class="page_info">
+      <%= page_entries_info @cities %>
+    </div>
+    <%= will_paginate @cities,:container => false %>
+  </div>
 </div>
