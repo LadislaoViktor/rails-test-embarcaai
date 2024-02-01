@@ -13,6 +13,7 @@
 
 <div id="cities">
   <% if @cities.length > 0 %>
+  <%= will_paginate @cities %>
     <% @cities.each do |city| %>
       <%= render city %>
       <p>

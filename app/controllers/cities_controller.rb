@@ -3,7 +3,7 @@ class CitiesController < ApplicationController
 
   # GET /cities or /cities.json
   def index
-    @cities = City.all
+    @cities = City.all.paginate(page: params[:page])
   end
 
   # GET /cities/1 or /cities/1.json
@@ -60,9 +60,9 @@ class CitiesController < ApplicationController
   def search
     # @city = City.new   
     if city_params.present?
-      @cities = City.filter(city_params)
+      @cities = City.filter(city_params).paginate(page: params[:page])
     else
-      @cities = City.all
+      @cities = City.all.paginate(page: params[:page])
     end
     render template: 'cities/index'
   end
@@ -76,6 +76,6 @@ class CitiesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def city_params
       # params.permit(:name, :states_id)
-      params.require(:city).permit(:id,:name, :states_id)
+      params.require(:city).permit(:id,:name, :states_id, :page)
     end
 end
