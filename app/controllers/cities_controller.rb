@@ -3,7 +3,7 @@ class CitiesController < ApplicationController
 
   # GET /cities or /cities.json
   def index
-    @cities = City.all.paginate(page: params[:page])
+    @cities = City.all.paginate(page: params[:page]).ordered_by_name
   end
 
   # GET /cities/1 or /cities/1.json
@@ -24,7 +24,7 @@ class CitiesController < ApplicationController
     @city = City.new(city_params)
     respond_to do |format|
       if @city.save
-        format.html { redirect_to city_url(@city), notice: "City was successfully created." }
+        format.html { redirect_to cities_url(@city), notice: "City was successfully created." }
         format.json { render :show, status: :created, location: @city }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -37,7 +37,7 @@ class CitiesController < ApplicationController
   def update
     respond_to do |format|
       if @city.update(city_params)
-        format.html { redirect_to city_url(@city), notice: "City was successfully updated." }
+        format.html { redirect_to cities_url(@city), notice: "City was successfully updated." }
         format.json { render :show, status: :ok, location: @city }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -59,9 +59,9 @@ class CitiesController < ApplicationController
   # GET /cities/search
   def search
     if city_params.present?
-      @cities = City.filter(city_params).paginate(page: params[:page])
+      @cities = City.filter(city_params).paginate(page: params[:page]).ordered_by_name
     else
-      @cities = City.all.paginate(page: params[:page])
+      @cities = City.all.paginate(page: params[:page]).ordered_by_name
     end
     render template: 'cities/index'
   end
