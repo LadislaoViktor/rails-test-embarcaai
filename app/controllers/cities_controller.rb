@@ -3,7 +3,7 @@ class CitiesController < ApplicationController
 
   # GET /cities or /cities.json
   def index
-    @cities = City.paginate(page: params[:page])
+    @cities = City.all
   end
 
   # GET /cities/1 or /cities/1.json
@@ -55,6 +55,17 @@ class CitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # GET /cities/search
+  def search
+    # @city = City.new   
+    if city_params.present?
+      @cities = City.filter(city_params)
+    else
+      @cities = City.all
+    end
+    render template: 'cities/index'
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -64,6 +75,7 @@ class CitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def city_params
-      params.require(:city).permit(:name, :states_id,:page)
+      # params.permit(:name, :states_id)
+      params.require(:city).permit(:id,:name, :states_id)
     end
 end

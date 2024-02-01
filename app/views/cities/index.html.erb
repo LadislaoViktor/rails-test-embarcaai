@@ -1,16 +1,26 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Cities</h1>
+  <%= form_with(model:@city, url: "/cities/search", method: :get) do |form| %>
+    <%= form.fields_for :city do |city_fields| %>
+      <%= city_fields.label :name, "Buscar por:" %>
+      <%= city_fields.collection_select(:states_id,State.all, :id, :name, prompt: true) %>
+      <%= city_fields.text_field :name %>
+      <%= city_fields.submit "Search" %>
+    <% end %>
+<% end %>
+<%= link_to "New city", new_city_path %>
 
 <div id="cities">
-  <%=will_paginate @cities%>
-  <% @cities.each do |city| %>
-    <%= render city %>
-    <p>
-      <%= link_to "Show this city", city %>
-    </p>
+  <% if @cities.length > 0 %>
+    <% @cities.each do |city| %>
+      <%= render city %>
+      <p>
+        <%= link_to "Show this city", city %>
+      </p>
+    <% end %>
+    <% else%>
+      <p>Nenhuma cidade encontrada.</p>  
   <% end %>
-  <%=will_paginate @cities%>
 </div>
 
-<%= link_to "New city", new_city_path %>
