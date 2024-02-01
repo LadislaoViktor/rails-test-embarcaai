@@ -58,7 +58,6 @@ class CitiesController < ApplicationController
   
   # GET /cities/search
   def search
-    # @city = City.new   
     if city_params.present?
       @cities = City.filter(city_params).paginate(page: params[:page])
     else

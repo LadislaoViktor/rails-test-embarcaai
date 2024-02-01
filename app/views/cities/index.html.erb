@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Cities</h1>
+<h1>Cidades</h1>
   <%= form_with(model:@city, url: "/cities/search", method: :get) do |form| %>
     <%= form.fields_for :city do |city_fields| %>
       <%= city_fields.label :name, "Buscar por:" %>
@@ -9,15 +9,16 @@
       <%= city_fields.submit "Search" %>
     <% end %>
 <% end %>
-<%= link_to "New city", new_city_path %>
+<%= link_to "Criar cidade", new_city_path %>
 
 <div id="cities">
   <% if @cities.length > 0 %>
   <%= will_paginate @cities %>
     <% @cities.each do |city| %>
       <%= render city %>
+      <hr>
       <p>
-        <%= link_to "Show this city", city %>
+        <%= link_to "Mostrar Cidade", city %>
       </p>
     <% end %>
     <% else%>
