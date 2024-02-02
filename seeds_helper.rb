@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Read json file
 require 'json'
 # Get each name:
@@ -9,10 +11,10 @@ def hash_parser(json_file)
     last_name = data_hash.to_a.last['nome'].to_s
 
     data_hash.each do |n|
-      unless last_name.eql?(n['nome'].to_s)
-        puts n['nome'].to_s + ','
+      if last_name.eql?(n['nome'].to_s)
+        puts n['nome']
       else
-        puts n['nome'].to_s
+        puts "#{n['nome']},"
       end
     end
   else

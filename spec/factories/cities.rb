@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :state do
     name { Faker::Address.state } # Use Faker gem to generate a random state name
