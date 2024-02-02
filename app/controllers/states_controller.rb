@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controller for State domain
 class StatesController < ApplicationController
   before_action :set_state, only: %i[show edit update destroy]
 

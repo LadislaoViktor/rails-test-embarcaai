@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controller for City domain
 class CitiesController < ApplicationController
   before_action :set_city, only: %i[show edit update destroy]
 

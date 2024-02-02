@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# class City < ApplicationRecord
 class City < ApplicationRecord
   belongs_to :state, optional: true
   validates :name, :state_id, presence: true
