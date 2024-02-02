@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :state do
-    name { 'Paraná' }
+    name { Faker::Address.state } # Use Faker gem to generate a random state name
   end
 end
 
 FactoryBot.define do
   factory :city do
-    name { 'Colombo' }
-    states_id { 1 }
+    name { Faker::Address.city }
+    state
   end
 end

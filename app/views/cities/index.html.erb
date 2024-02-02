@@ -9,7 +9,7 @@
     <div class="row g-3">
       <div class="col">
         <%= city_fields.label :name, "Choose a state:" %>
-        <%= city_fields.collection_select(:states_id, states, :id, :name, prompt: "Select") %>
+        <%= city_fields.collection_select(:state_id, states, :id, :name, prompt: "Select") %>
       </div>
       <div class="col">
         <%= city_fields.text_field :name, placeholder: "Type the city name here" %>
@@ -18,7 +18,7 @@
     </div>
   <% end %>
 <% end %>
-<%= link_to "New", new_city_path %>
+<%= link_to "New", new_city_path , type:"button", class:"btn btn-info btn-sm bi bi-plus" %>
 <div class="" id="cities">
   <% if @cities.length.positive? %>
     <div class="apple_pagination">

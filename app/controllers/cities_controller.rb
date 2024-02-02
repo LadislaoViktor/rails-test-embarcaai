@@ -1,5 +1,5 @@
 class CitiesController < ApplicationController
-  before_action :set_city, only: %i[ show edit update destroy ]
+  before_action :set_city, only: %i[show edit update destroy]
 
   # GET /cities or /cities.json
   def index
@@ -7,8 +7,7 @@ class CitiesController < ApplicationController
   end
 
   # GET /cities/1 or /cities/1.json
-  def show
-  end
+  def show; end
 
   # GET /cities/new
   def new
@@ -16,15 +15,14 @@ class CitiesController < ApplicationController
   end
 
   # GET /cities/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /cities or /cities.json
   def create
     @city = City.new(city_params)
     respond_to do |format|
       if @city.save
-        format.html { redirect_to cities_url(@city), notice: "City was successfully created." }
+        format.html { redirect_to cities_url(@city), notice: 'City was successfully created.' }
         format.json { render :show, status: :created, location: @city }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -37,7 +35,7 @@ class CitiesController < ApplicationController
   def update
     respond_to do |format|
       if @city.update(city_params)
-        format.html { redirect_to cities_url(@city), notice: "City was successfully updated." }
+        format.html { redirect_to cities_url(@city), notice: 'City was successfully updated.' }
         format.json { render :show, status: :ok, location: @city }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,30 +49,30 @@ class CitiesController < ApplicationController
     @city.destroy
 
     respond_to do |format|
-      format.html { redirect_to cities_url, notice: "City was successfully destroyed." }
+      format.html { redirect_to cities_url, notice: 'City was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
-  
+
   # GET /cities/search
   def search
-    if city_params.present?
-      @cities = City.filter(city_params).paginate(page: params[:page]).ordered_by_name
-    else
-      @cities = City.all.paginate(page: params[:page]).ordered_by_name
-    end
+    @cities = if city_params.present?
+                City.filter(city_params).paginate(page: params[:page]).ordered_by_name
+              else
+                City.all.paginate(page: params[:page]).ordered_by_name
+              end
     render template: 'cities/index'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_city
-      @city = City.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def city_params
-      # params.permit(:name, :states_id)
-      params.require(:city).permit(:id,:name, :states_id, :page)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_city
+    @city = City.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def city_params
+    params.require(:city).permit(:id, :name, :state_id, :page)
+  end
 end

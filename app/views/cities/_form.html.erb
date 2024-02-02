@@ -15,7 +15,7 @@
   </div>
   <div>
     <%= form.label :State_id, "State:", style: "display: block" %>
-    <%= form.collection_select(:states_id, states, :id, :name, prompt: true) %>
+    <%= form.collection_select(:state_id, states, :id, :name, prompt: true) %>
   </div>
   <div>
     <%= form.submit "Save"%>
