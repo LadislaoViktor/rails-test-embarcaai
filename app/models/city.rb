@@ -1,6 +1,6 @@
 class City < ApplicationRecord
   belongs_to :state, optional: true
-  validates :name, presence: true
+  validates :name, :state_id, presence: true
   scope :ordered_by_name, -> { reorder(name: :asc) }
 
   def states
