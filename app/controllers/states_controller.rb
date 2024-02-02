@@ -1,5 +1,5 @@
 class StatesController < ApplicationController
-  before_action :set_state, only: %i[ show edit update destroy ]
+  before_action :set_state, only: %i[show edit update destroy]
 
   # GET /states or /states.json
   def index
@@ -58,13 +58,14 @@ class StatesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_state
-      @state = State.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def state_params
-      params.require(:state).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_state
+    @state = State.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def state_params
+    params.require(:state).permit(:name)
+  end
 end
