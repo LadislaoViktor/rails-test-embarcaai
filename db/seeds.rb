@@ -12,12 +12,12 @@
 require 'json'
 # Get each name:
 
-def hash_parser(json_file, state_id)
+def hash_parser(json_file, states_id)
   if json_file
     data_hash = JSON.parse(json_file)
 
     data_hash.each do |n|
-      City.create!(name: n['nome'].to_s, state_id: state_id)
+      City.create!(name: n['nome'].to_s, states_id: states_id)
     end
   else
     p 'Ocorreu um erro ao carregar o arquivo .json'

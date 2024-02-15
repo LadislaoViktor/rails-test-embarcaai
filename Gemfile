@@ -3,10 +3,15 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.6'
+ruby '2.7.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.8'
+gem 'rails', '~> 5.2'
+
+# Rails 5.2 depends on this pack
+gem 'actionpack', '~>5.2.1.rc1'
+
+gem 'psych','< 4'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -18,13 +23,13 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem 'importmap-rails'
+# gem 'importmap-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails'
+# gem 'turbo-rails', '~>1.1.0'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'stimulus-rails'
+# gem 'stimulus-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
@@ -65,7 +70,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.1.0'
   gem 'faker'
   gem 'rails-controller-testing'
-  gem 'rspec-rails', '~>6.1.0'
+  gem 'rspec-rails', '~>5.1.0'
 end
 
 group :development do
@@ -81,7 +86,7 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
+  gem 'capybara','~> 3.38'
   gem 'rspec'
   gem 'selenium-webdriver'
 end

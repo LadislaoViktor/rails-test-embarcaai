@@ -4,7 +4,7 @@
       <h2><%= pluralize(city.errors.count, "error") %> prohibited this from being saved.</h2>
       <ul>
         <% city.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li><%= error %></li>
         <% end %>
       </ul>
     </div>
@@ -14,8 +14,8 @@
     <%= form.text_field :name %>
   </div>
   <div>
-    <%= form.label :State_id, "State:", style: "display: block" %>
-    <%= form.collection_select(:state_id, states, :id, :name, prompt: true) %>
+    <%= form.label :states_id, "State:", style: "display: block" %>
+    <%= form.collection_select(:states_id, states, :id, :name, prompt: true) %>
   </div>
   <div>
     <%= form.submit "Save"%>

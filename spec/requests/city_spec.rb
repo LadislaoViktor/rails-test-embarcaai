@@ -18,7 +18,7 @@ RSpec.describe 'Cities', type: :request do
 
   describe 'Get /search' do
     it 'Get city by state' do
-      params = { 'city' => { 'state_id' => @cities.sample.state_id, 'name' => '' },
+      params = { 'city' => { 'states_id' => @cities.sample.states_id, 'name' => '' },
                  'commit' => 'Buscar' }
       get '/cities/search', params: params
 
@@ -26,7 +26,7 @@ RSpec.describe 'Cities', type: :request do
       expect(assigns(:cities).count).to eq 1
     end
     it 'Get city by name' do
-      params = { 'city' => { 'state_id' => '', 'name' => @cities.sample.name },
+      params = { 'city' => { 'states_id' => '', 'name' => @cities.sample.name },
                  'commit' => 'Buscar' }
       get '/cities/search', params: params
 
@@ -35,7 +35,7 @@ RSpec.describe 'Cities', type: :request do
     end
     it 'Get city by name' do
       random = rand(0..19)
-      params = { 'city' => { 'state_id' => @cities[random].state_id, 'name' => @cities[random].name },
+      params = { 'city' => { 'states_id' => @cities[random].states_id, 'name' => @cities[random].name },
                  'commit' => 'Buscar' }
       get '/cities/search', params: params
 

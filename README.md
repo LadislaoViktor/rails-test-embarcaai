@@ -33,5 +33,9 @@ ou
 
 Para executar os testes:
 
-*bundle exec rspec path/to/*spec.rb *
+*docker-compose run --rm web bundle exec rspec*
+
+ou
+
+*docker-compose run --rm web bundle exec rspec path/to/*spec.rb *
 
