@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe State, type: :model do
   before(:each) do
-    @state = FactoryBot.create_list(:state,10)
+    @state = FactoryBot.create_list(:state, 10)
   end
 
   it 'must return an error when trying to create a state without a name' do

@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'Cities', type: :request do
   before(:each) do
     @state = FactoryBot.create :state
-    @cities = FactoryBot.create_list :city, 20,states_id: @state.id
+    @cities = FactoryBot.create_list :city, 20, states_id: @state.id
   end
 
   describe 'GET /index' do
@@ -45,25 +45,28 @@ RSpec.describe 'Cities', type: :request do
   end
 
   describe 'POST /cities' do
-    it 'Creates a city successfully' do 
-      post '/cities', params:{"city"=>{"name"=>"Kawabanga", "states_id"=>@state.id}}
+    it 'Creates a city successfully' do
+      post '/cities', params: { 'city' => { 'name' => 'Kawabanga', 'states_id' => @state.id } }
       @city = City.last
       expect(response).to redirect_to(cities_url(@city))
     end
-    it 'Returns an error if name is blank' do 
-      post '/cities', params:{"city"=>{"name"=>"", "states_id"=>@state.id}}
-      expect(response.body).to include("error prohibited this from being saved")
+    it 'Returns an error if name is blank' do
+      post '/cities', params: { 'city' => { 'name' => '', 'states_id' => @state.id } }
+      expect(response.body).to include('error prohibited this from being saved')
     end
   end
 
   describe 'PUT /cities' do
     it 'should update a city successfully' do
-      put "/cities/#{@cities.first.id}", params:{"city"=>{"name"=>"Abatiáo", "states_id"=>@state.id}, "commit"=>"Save", "id"=>@cities.first.id}
+      put "/cities/#{@cities.first.id}",
+          params: { 'city' => { 'name' => 'Abatiáo', 'states_id' => @state.id }, 'commit' => 'Save',
+                    'id' => @cities.first.id }
       expect(response).to redirect_to(cities_url(@cities.first))
     end
     it 'should return an error if city name is blank' do
-      put "/cities/#{@cities.first.id}", params:{"city"=>{"name"=>"", "states_id"=>@state.id}, "commit"=>"Save", "id"=>@cities.first.id}
-      expect(response.body).to include("error prohibited this from being saved")
+      put "/cities/#{@cities.first.id}",
+          params: { 'city' => { 'name' => '', 'states_id' => @state.id }, 'commit' => 'Save', 'id' => @cities.first.id }
+      expect(response.body).to include('error prohibited this from being saved')
     end
   end
 end
