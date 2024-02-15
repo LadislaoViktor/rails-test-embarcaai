@@ -8,19 +8,12 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# Read json file
 require 'json'
-# Get each name:
 
 def hash_parser(json_file, states_id)
-  if json_file
-    data_hash = JSON.parse(json_file)
-
-    data_hash.each do |n|
-      City.create!(name: n['nome'].to_s, states_id: states_id)
-    end
-  else
-    p 'Ocorreu um erro ao carregar o arquivo .json'
+  data_hash = JSON.parse(json_file)
+  data_hash.each do |n|
+    City.create!(name: n['nome'].to_s, states_id: states_id)
   end
 end
 
