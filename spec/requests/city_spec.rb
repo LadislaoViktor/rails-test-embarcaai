@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'Cities', type: :request do
   before(:each) do
-    FactoryBot.create_list :state, 5
-    @cities = FactoryBot.create_list :city, 20
+    @state = FactoryBot.create :state
+    @cities = FactoryBot.create_list :city, 20,states_id: @state.id
   end
 
   describe 'GET /index' do
@@ -18,15 +18,15 @@ RSpec.describe 'Cities', type: :request do
 
   describe 'Get /search' do
     it 'Get city by state' do
-      params = { 'city' => { 'state_id' => @cities.sample.state_id, 'name' => '' },
+      params = { 'city' => { 'states_id' => @cities.sample.states_id, 'name' => '' },
                  'commit' => 'Buscar' }
       get '/cities/search', params: params
 
       expect(response).to have_http_status(:ok)
-      expect(assigns(:cities).count).to eq 1
+      expect(assigns(:cities).count).to eq 20
     end
     it 'Get city by name' do
-      params = { 'city' => { 'state_id' => '', 'name' => @cities.sample.name },
+      params = { 'city' => { 'states_id' => '', 'name' => @cities.sample.name },
                  'commit' => 'Buscar' }
       get '/cities/search', params: params
 
@@ -35,7 +35,7 @@ RSpec.describe 'Cities', type: :request do
     end
     it 'Get city by name' do
       random = rand(0..19)
-      params = { 'city' => { 'state_id' => @cities[random].state_id, 'name' => @cities[random].name },
+      params = { 'city' => { 'states_id' => @cities[random].states_id, 'name' => @cities[random].name },
                  'commit' => 'Buscar' }
       get '/cities/search', params: params
 

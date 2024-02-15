@@ -27,11 +27,15 @@ an then:
 
 *rake db:seed*
 
-ou 
+or 
 
 *rake db:setup*
 
-Para executar os testes:
+To run the tests:
 
 *bundle exec rspec path/to/*spec.rb *
+
+or:
+
+rspec
 

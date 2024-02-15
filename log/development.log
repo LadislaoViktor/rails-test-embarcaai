@@ -4544,3 +4544,1044 @@ Processing by CitiesController#index as HTML
 Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.6ms | Allocations: 3170)
 
 
+Started GET "/states" for 172.20.0.1 at 2024-02-15 19:18:02 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.html.erb within layouts/application
+  [1m[36mState Load (0.6ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.html.erb:6
+  Rendered states/_state.html.erb (Duration: 0.5ms | Allocations: 256)
+  Rendered states/_state.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered states/_state.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered states/index.html.erb within layouts/application (Duration: 20.4ms | Allocations: 17627)
+  Rendered layout layouts/application.html.erb (Duration: 64.1ms | Allocations: 52443)
+Completed 200 OK in 297ms (Views: 62.2ms | ActiveRecord: 4.2ms | Allocations: 341185)
+
+
+Started GET "/cities/" for 172.20.0.1 at 2024-02-15 19:18:07 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities"[0m
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 53.1ms | Allocations: 36486)
+  Rendered layout layouts/application.html.erb (Duration: 56.6ms | Allocations: 38119)
+Completed 200 OK in 67ms (Views: 53.1ms | ActiveRecord: 6.7ms | Allocations: 42674)
+
+
+Started GET "/cities?page=2" for 172.20.0.1 at 2024-02-15 19:19:20 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 10]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 10]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities"[0m
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 10]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 22.1ms | Allocations: 17691)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 19138)
+Completed 200 OK in 26ms (Views: 22.6ms | ActiveRecord: 2.4ms | Allocations: 19680)
+
+
+Started GET "/cities?page=3" for 172.20.0.1 at 2024-02-15 19:19:21 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.6ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (1.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 20]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.9ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 20]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities"[0m
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 20]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 38.2ms | Allocations: 17599)
+  Rendered layout layouts/application.html.erb (Duration: 39.9ms | Allocations: 19045)
+Completed 200 OK in 43ms (Views: 36.0ms | ActiveRecord: 4.9ms | Allocations: 19527)
+
+
+Started GET "/cities?page=1" for 172.20.0.1 at 2024-02-15 19:19:22 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities"[0m
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 25.0ms | Allocations: 17459)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 18904)
+Completed 200 OK in 29ms (Views: 24.4ms | ActiveRecord: 3.0ms | Allocations: 19378)
+
+
+Started GET "/cities/search?%5Bcity%5D%5Bstates_id%5D=1&%5Bcity%5D%5Bname%5D=&commit=Buscar" for 172.20.0.1 at 2024-02-15 19:19:25 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#search as HTML
+  Parameters: {"city"=>{"states_id"=>"1", "name"=>""}, "commit"=>"Buscar"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities" WHERE "cities"."states_id" = $1[0m  [["states_id", 1]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 25.7ms | Allocations: 18489)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 19934)
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 2.1ms | Allocations: 20591)
+
+
+Started GET "/cities/search?%5Bcity%5D%5Bstates_id%5D=2&%5Bcity%5D%5Bname%5D=&commit=Buscar" for 172.20.0.1 at 2024-02-15 19:19:29 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#search as HTML
+  Parameters: {"city"=>{"states_id"=>"2", "name"=>""}, "commit"=>"Buscar"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 2], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 2], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities" WHERE "cities"."states_id" = $1[0m  [["states_id", 2]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 2], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 28.4ms | Allocations: 18473)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 19919)
+Completed 200 OK in 33ms (Views: 28.9ms | ActiveRecord: 2.5ms | Allocations: 20519)
+
+
+Started GET "/cities/search?%5Bcity%5D%5Bstates_id%5D=3&%5Bcity%5D%5Bname%5D=&commit=Buscar" for 172.20.0.1 at 2024-02-15 19:19:32 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#search as HTML
+  Parameters: {"city"=>{"states_id"=>"3", "name"=>""}, "commit"=>"Buscar"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.9ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities" WHERE "cities"."states_id" = $1[0m  [["states_id", 3]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 33.7ms | Allocations: 18469)
+  Rendered layout layouts/application.html.erb (Duration: 35.8ms | Allocations: 19914)
+Completed 200 OK in 39ms (Views: 33.3ms | ActiveRecord: 3.4ms | Allocations: 20506)
+
+
+Started GET "/cities/search?city%5Bname%5D=&city%5Bstates_id%5D=3&commit=Buscar&page=9" for 172.20.0.1 at 2024-02-15 19:21:42 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#search as HTML
+  Parameters: {"city"=>{"name"=>"", "states_id"=>"3"}, "commit"=>"Buscar", "page"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 10], ["OFFSET", 80]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 1], ["OFFSET", 80]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities" WHERE "cities"."states_id" = $1[0m  [["states_id", 3]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 1], ["OFFSET", 80]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 42.2ms | Allocations: 19455)
+  Rendered layout layouts/application.html.erb (Duration: 44.0ms | Allocations: 20910)
+Completed 200 OK in 46ms (Views: 42.2ms | ActiveRecord: 2.4ms | Allocations: 21500)
+
+
+Started GET "/cities/search?city%5Bname%5D=&city%5Bstates_id%5D=3&commit=Buscar&page=10" for 172.20.0.1 at 2024-02-15 19:21:44 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#search as HTML
+  Parameters: {"city"=>{"name"=>"", "states_id"=>"3"}, "commit"=>"Buscar", "page"=>"10"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.5ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (1.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 10], ["OFFSET", 90]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 1], ["OFFSET", 90]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities" WHERE "cities"."states_id" = $1[0m  [["states_id", 3]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 1], ["OFFSET", 90]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 33.3ms | Allocations: 19433)
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 20878)
+Completed 200 OK in 40ms (Views: 33.0ms | ActiveRecord: 3.8ms | Allocations: 21468)
+
+
+Started GET "/cities/search?city%5Bname%5D=&city%5Bstates_id%5D=3&commit=Buscar&page=9" for 172.20.0.1 at 2024-02-15 19:22:00 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#search as HTML
+  Parameters: {"city"=>{"name"=>"", "states_id"=>"3"}, "commit"=>"Buscar", "page"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 10], ["OFFSET", 80]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 1], ["OFFSET", 80]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities" WHERE "cities"."states_id" = $1[0m  [["states_id", 3]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 1], ["OFFSET", 80]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 31.1ms | Allocations: 19423)
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 20880)
+Completed 200 OK in 35ms (Views: 31.7ms | ActiveRecord: 2.4ms | Allocations: 21480)
+
+
+Started GET "/cities/search?city%5Bname%5D=&city%5Bstates_id%5D=3&commit=Buscar&page=10" for 172.20.0.1 at 2024-02-15 19:22:04 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#search as HTML
+  Parameters: {"city"=>{"name"=>"", "states_id"=>"3"}, "commit"=>"Buscar", "page"=>"10"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 10], ["OFFSET", 90]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 1], ["OFFSET", 90]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities" WHERE "cities"."states_id" = $1[0m  [["states_id", 3]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 1], ["OFFSET", 90]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 30.7ms | Allocations: 19431)
+  Rendered layout layouts/application.html.erb (Duration: 33.1ms | Allocations: 20876)
+Completed 200 OK in 35ms (Views: 31.3ms | ActiveRecord: 2.3ms | Allocations: 21466)
+
+
+Started GET "/cities/search?city%5Bname%5D=&city%5Bstates_id%5D=3&commit=Buscar&page=50" for 172.20.0.1 at 2024-02-15 19:22:05 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#search as HTML
+  Parameters: {"city"=>{"name"=>"", "states_id"=>"3"}, "commit"=>"Buscar", "page"=>"50"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (1.9ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 10], ["OFFSET", 490]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (1.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 1], ["OFFSET", 490]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 1], ["OFFSET", 490]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 31.8ms | Allocations: 15355)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 16800)
+Completed 200 OK in 37ms (Views: 29.5ms | ActiveRecord: 5.1ms | Allocations: 17390)
+
+
+Started GET "/cities/search?city%5Bname%5D=&city%5Bstates_id%5D=3&commit=Buscar&page=50" for 172.20.0.1 at 2024-02-15 19:29:02 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#search as HTML
+  Parameters: {"city"=>{"name"=>"", "states_id"=>"3"}, "commit"=>"Buscar", "page"=>"50"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (1.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 10], ["OFFSET", 490]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.9ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 1], ["OFFSET", 490]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 3], ["LIMIT", 1], ["OFFSET", 490]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 25.6ms | Allocations: 15456)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 16901)
+Completed 200 OK in 46ms (Views: 25.1ms | ActiveRecord: 9.9ms | Allocations: 20522)
+
+
+Started GET "/cities/new" for 172.20.0.1 at 2024-02-15 19:29:13 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cities/new.html.erb within layouts/application
+  [1m[36mState Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/_form.html.erb:18
+  Rendered cities/_form.html.erb (Duration: 7.3ms | Allocations: 2496)
+  Rendered cities/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2849)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4303)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.8ms | Allocations: 4740)
+
+
+Started POST "/cities" for 172.20.0.1 at 2024-02-15 19:29:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "city"=>{"name"=>"Dollynho city", "states_id"=>"1"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cities_controller.rb:29:in `block in create'
+  [1m[36mCity Create (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("name", "states_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dollynho city"], ["states_id", 1], ["created_at", "2024-02-15 19:29:24.422370"], ["updated_at", "2024-02-15 19:29:24.422370"]]
+  ↳ app/controllers/cities_controller.rb:29:in `block in create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cities_controller.rb:29:in `block in create'
+Redirected to http://0.0.0.0:3000/cities.1192
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms | Allocations: 3815)
+
+
+Started GET "/cities.1192" for 172.20.0.1 at 2024-02-15 19:29:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities"[0m
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 29.2ms | Allocations: 17811)
+  Rendered layout layouts/application.html.erb (Duration: 31.2ms | Allocations: 19357)
+Completed 200 OK in 33ms (Views: 28.2ms | ActiveRecord: 3.5ms | Allocations: 20014)
+
+
+Started GET "/cities.1192" for 172.20.0.1 at 2024-02-15 19:29:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities"[0m
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 29.8ms | Allocations: 17603)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 19048)
+Completed 200 OK in 34ms (Views: 29.8ms | ActiveRecord: 3.0ms | Allocations: 19538)
+
+
+Started GET "/cities/search?%5Bcity%5D%5Bstates_id%5D=&%5Bcity%5D%5Bname%5D=lly&commit=Buscar" for 172.20.0.1 at 2024-02-15 19:29:30 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#search as HTML
+  Parameters: {"city"=>{"states_id"=>"", "name"=>"lly"}, "commit"=>"Buscar"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.9ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE (name like '%lly%' or name like 'lly%' or name like '%lly') ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE (name like '%lly%' or name like 'lly%' or name like '%lly') ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE (name like '%lly%' or name like 'lly%' or name like '%lly') ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 6458)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 7904)
+Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 2.4ms | Allocations: 8527)
+
+
+Started DELETE "/cities/1192" for 172.20.0.1 at 2024-02-15 19:29:32 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1192"}
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1192], ["LIMIT", 1]]
+  ↳ app/controllers/cities_controller.rb:76:in `set_city'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cities_controller.rb:54:in `destroy'
+  [1m[36mCity Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cities" WHERE "cities"."id" = $1[0m  [["id", 1192]]
+  ↳ app/controllers/cities_controller.rb:54:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cities_controller.rb:54:in `destroy'
+Redirected to http://0.0.0.0:3000/cities
+Completed 302 Found in 9ms (ActiveRecord: 1.7ms | Allocations: 3132)
+
+
+Started GET "/cities" for 172.20.0.1 at 2024-02-15 19:29:32 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities"[0m
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 30.1ms | Allocations: 17440)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 18885)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 3.1ms | Allocations: 19410)
+
+
+Started GET "/cities" for 172.22.0.1 at 2024-02-15 19:36:48 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.6ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities"[0m
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 67.4ms | Allocations: 54771)
+  Rendered layout layouts/application.html.erb (Duration: 436.0ms | Allocations: 123724)
+Completed 200 OK in 1343ms (Views: 431.3ms | ActiveRecord: 10.4ms | Allocations: 1104349)
+
+
+Started GET "/cities/search?%5Bcity%5D%5Bstates_id%5D=1&%5Bcity%5D%5Bname%5D=&commit=Buscar" for 172.22.0.1 at 2024-02-15 19:37:00 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#search as HTML
+  Parameters: {"city"=>{"states_id"=>"1", "name"=>""}, "commit"=>"Buscar"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.5ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities" WHERE "cities"."states_id" = $1[0m  [["states_id", 1]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 33.3ms | Allocations: 18596)
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 20043)
+Completed 200 OK in 39ms (Views: 32.7ms | ActiveRecord: 3.3ms | Allocations: 20769)
+
+
+Started GET "/cities/search?city%5Bname%5D=&city%5Bstates_id%5D=1&commit=Buscar&page=5" for 172.22.0.1 at 2024-02-15 19:42:39 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#search as HTML
+  Parameters: {"city"=>{"name"=>"", "states_id"=>"1"}, "commit"=>"Buscar", "page"=>"5"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 1], ["LIMIT", 10], ["OFFSET", 40]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 1], ["LIMIT", 1], ["OFFSET", 40]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities" WHERE "cities"."states_id" = $1[0m  [["states_id", 1]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.7ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 1], ["LIMIT", 1], ["OFFSET", 40]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 32.8ms | Allocations: 18733)
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 20179)
+Completed 200 OK in 36ms (Views: 31.8ms | ActiveRecord: 3.3ms | Allocations: 20777)
+
+
+Started GET "/cities/40" for 172.22.0.1 at 2024-02-15 19:43:15 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/cities_controller.rb:76:in `set_city'
+  Rendering layout layouts/application.html.erb
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  Rendered cities/_city.html.erb (Duration: 9.2ms | Allocations: 5170)
+  Rendered cities/show.html.erb within layouts/application (Duration: 15.3ms | Allocations: 7223)
+  Rendered layout layouts/application.html.erb (Duration: 60.4ms | Allocations: 41428)
+Completed 200 OK in 339ms (Views: 60.1ms | ActiveRecord: 6.2ms | Allocations: 348637)
+
+
+Started GET "/cities/4000" for 172.22.0.1 at 2024-02-15 19:43:19 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"4000"}
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 4000], ["LIMIT", 1]]
+  ↳ app/controllers/cities_controller.rb:76:in `set_city'
+Redirected to http://0.0.0.0:3000/404
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1079)
+
+
+Started GET "/cities/40" for 172.22.0.1 at 2024-02-15 19:49:30 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/cities_controller.rb:76:in `set_city'
+  Rendering layout layouts/application.html.erb
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  Rendered cities/_city.html.erb (Duration: 2.1ms | Allocations: 558)
+  Rendered cities/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1186)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2634)
+Completed 200 OK in 25ms (Views: 5.5ms | ActiveRecord: 7.1ms | Allocations: 6622)
+
+
+Started GET "/cities" for 172.22.0.1 at 2024-02-15 19:49:37 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities"[0m
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 44.2ms | Allocations: 23675)
+  Rendered layout layouts/application.html.erb (Duration: 45.9ms | Allocations: 25230)
+Completed 200 OK in 49ms (Views: 42.6ms | ActiveRecord: 4.0ms | Allocations: 26072)
+
+
+Started GET "/cities?page=7" for 172.22.0.1 at 2024-02-15 19:49:40 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#index as HTML
+  Parameters: {"page"=>"7"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 60]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 60]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mCity Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cities"[0m
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" ORDER BY "cities"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 60]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 30.2ms | Allocations: 18127)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 19574)
+Completed 200 OK in 33ms (Views: 28.6ms | ActiveRecord: 3.7ms | Allocations: 20117)
+
+
+Started GET "/cities/search?%5Bcity%5D%5Bstates_id%5D=1&%5Bcity%5D%5Bname%5D=Colombo&commit=Buscar" for 172.22.0.1 at 2024-02-15 19:49:51 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CitiesController#search as HTML
+  Parameters: {"city"=>{"states_id"=>"1", "name"=>"Colombo"}, "commit"=>"Buscar"}
+  Rendering layout layouts/application.html.erb
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mState Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "states"[0m
+  ↳ app/helpers/cities_helper.rb:6:in `states'
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/cities/index.html.erb:12
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 AND (name like '%Colombo%' or name like 'Colombo%' or name like '%Colombo') ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:23
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 AND (name like '%Colombo%' or name like 'Colombo%' or name like '%Colombo') ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:26
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/city.rb:14:in `state'
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."states_id" = $1 AND (name like '%Colombo%' or name like 'Colombo%' or name like '%Colombo') ORDER BY "cities"."name" ASC LIMIT $2 OFFSET $3[0m  [["states_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/cities/index.html.erb:59
+  Rendered cities/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 6524)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 7971)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 1.9ms | Allocations: 8688)
+
+
+Started GET "/" for 172.22.0.1 at 2024-02-15 19:50:18 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.3ms | Allocations: 828)
+Completed 200 OK in 236ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 286481)
+
+

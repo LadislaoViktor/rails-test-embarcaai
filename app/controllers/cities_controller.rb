@@ -4,6 +4,8 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: %i[show edit update destroy]
 
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+
   # GET /cities or /cities.json
   def index
     @cities = City.all.paginate(page: params[:page]).ordered_by_name
@@ -74,8 +76,13 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
   end
 
+  # render not_found if City not found
+  def render_not_found
+    redirect_to '/404'
+  end
+
   # Only allow a list of trusted parameters through.
   def city_params
-    params.require(:city).permit(:id, :name, :state_id, :page)
+    params.require(:city).permit(:id, :name, :states_id, :page)
   end
 end

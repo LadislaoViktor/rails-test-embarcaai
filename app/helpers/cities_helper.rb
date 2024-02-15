@@ -3,6 +3,6 @@
 # A helper for City Views
 module CitiesHelper
   def states
-    State.all if State.count.positive?
+    State.count.positive? ? State.all : []
   end
 end
